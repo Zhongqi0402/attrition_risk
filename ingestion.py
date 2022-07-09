@@ -37,7 +37,7 @@ def merge_multiple_dataframe():
     final_df.to_csv(output_folder_path + '/finaldata.csv', index=False)
     
     logging.info("Writing source data path to file and save")
-    with open(output_folder_path + '/' + "ingesteddata.txt", 'w') as fp:
+    with open(output_folder_path + '/' + "ingestedfiles.txt", 'w') as fp:
         for file in source_list:
             fp.write(file+'\n')
     
