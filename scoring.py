@@ -39,6 +39,8 @@ def score_model():
     
     with open(config['output_model_path']+"/"+"latestscore.txt", 'w') as fp:
         fp.write(str(f1score))
+
+    return str(f1score)
         
     
 if __name__ == '__main__':
