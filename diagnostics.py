@@ -1,3 +1,4 @@
+
 import pandas as pd
 import numpy as np
 import timeit
@@ -21,7 +22,8 @@ def model_predictions(test_data_path):
         model = pickle.load(file)
     X=test_data.loc[:,['lastmonth_activity','lastyear_activity', 'number_of_employees']].values.reshape(-1, 3)
     y_hat = model.predict(X)
-    return y_hat
+ 
+    return y_hat.tolist()
 
 ##################Function to get summary statistics
 def dataframe_summary():
@@ -65,12 +67,11 @@ def outdated_packages_list():
   
     with open('package.txt', 'wb') as f:
         f.write(info)
-
-    return
+    
+    return info
 if __name__ == '__main__':
     model_predictions(test_data_path)
     dataframe_summary()
     check_missing_data()
     execution_time()
     outdated_packages_list()
-
